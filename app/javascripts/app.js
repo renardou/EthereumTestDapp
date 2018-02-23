@@ -1,4 +1,5 @@
-﻿import "../stylesheets/app.css";
+/* Application de vote effectuee à l'aide de Truffle  */
+import "../stylesheets/app.css";
 
 // Import libraries we need.
 import { default as Web3 } from 'web3';
