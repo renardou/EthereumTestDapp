@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello World DApp</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+        .margin-top-3 {
+            margin-top: 3em;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1>Une simple application de vote</h1>
+    <div class="col-sm-7 margin-top-3">
+        <h2>Candidats</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Candidat</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="candidate-rows">
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid">
+            <h2>Ajouter un candidat</h2>
+            <div id="msgA"></div>
+            <input type="text" id="candidateA" placeholder="Entrer le  nom du candidat" />&nbsp;
+            <a href="#" onclick="addCandidate()" class="btn btn-primary">Ajout</a>
+            <br>
+            <br>
+            <h2>Voter pour un candidat</h2>
+            <br>
+            <div id="msg"></div>
+            <input type="text" id="candidate" placeholder="Entrer le  code du candidat" />
+            <br>
+            <br>
+            <input type="text" id="vote-tokens" placeholder="Total de jetons à affecter" />&nbsp;
+            <a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
+        </div>
+    </div>
+    <div class="col-sm-offset-1 col-sm-4 margin-top-3">
+        <div class="row">
+            <h2>Statistiques jetons</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>jetons en vente</td>
+                        <td id="tokens-total"></td>
+                    </tr>
+                    <tr>
+                        <td>jetons vendus</td>
+                        <td id="tokens-sold"></td>
+                    </tr>
+                    <tr>
+                        <td>Prix du jeton</td>
+                        <td id="token-cost"></td>
+                    </tr>
+                    <tr>
+                        <td>Solde du contrat</td>
+                        <td id="contract-balance"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row margin-top-3">
+            <h2>Achat de jetons</h2>
+            <div class="col-sm-12">
+                <div id="buy-msg"></div>
+                <input type="text" id="buy" class="col-sm-8" placeholder="Nbre de jetons à acheter" />&nbsp;
+                <a href="#" onclick="buyTokens()" class="btn btn-primary">Buy</a>
+            </div>
+        </div>
+        <div class="row margin-top-3">
+            <h2>Recherche infos electeur</h2>
+            <div class="col-sm-12">
+                <input type="text" id="voter-info" , class="col-sm-8" placeholder="Entrer l'adresse de l'electeur" />&nbsp;
+                <a href="#" onclick="lookupVoterInfo()" class="btn btn-primary">Lookup</a>
+                <div class="voter-details row text-left">
+                    <div id="tokens-bought" class="margin-top-3 col-md-12"></div>
+                    <div id="votes-cast" class="col-md-12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="app.js"></script>
+
+</html>
